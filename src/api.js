@@ -6,7 +6,7 @@ import axios from "axios";
 const isProduction = window.location.hostname !== "localhost";
 
 // Backend URLs
-const PROD_URL = ""; // Your production backend
+const PROD_URL = ""; // Your production backend   https://abc-backend-hpsg.onrender.com
 const DEV_URL = "http://localhost:5000"; // Your local backend
 
 // Final Base URL (backend + /api)
@@ -57,5 +57,17 @@ api.interceptors.response.use(
 );
 
 export const login = (credentials) => api.post("/auth/login", credentials);
+
+export const getAllJournal = () => api.get("/content/all/journal");
+
+export const getSingleJournal = (slug) => api.get(`/content/journal/${slug}`);
+
+export const getAllAdvisory = () => api.get("/content/all/advisory");
+
+export const getSingleAdvisory = (slug) => api.get(`/content/advisory/${slug}`);
+
+export const getAllServices = () => api.get("/content/all/sevices");
+
+export const getSingleService = (slug) => api.get(`/content/service/${slug}`);
 
 export default api;
