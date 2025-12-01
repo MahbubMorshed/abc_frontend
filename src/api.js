@@ -6,7 +6,7 @@ import axios from "axios";
 const isProduction = window.location.hostname !== "localhost";
 
 // Backend URLs
-const PROD_URL = ""; // Your production backend   https://abc-backend-hpsg.onrender.com
+const PROD_URL = "https://abc-backend-hpsg.onrender.com"; // Your production backend   https://abc-backend-hpsg.onrender.com
 const DEV_URL = "http://localhost:5000"; // Your local backend
 
 // Final Base URL (backend + /api)
