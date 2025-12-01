@@ -15,6 +15,7 @@ import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import JournalDetails from "./pages/JournalDetails.jsx";
 import AdvisoryDetails from "./pages/AdvisoryDetails.jsx";
+import CfpDetails from "./pages/CfpDetails.jsx";
 
 // Admin
 import Login from "./admin/pages/Login.jsx";
@@ -23,6 +24,7 @@ import AdminDashboard from "./admin/pages/AdminDashboard.jsx";
 import AddJournal from "./admin/pages/AddJournal.jsx";
 import AddAdvisory from "./admin/pages/AddAdvisory.jsx";
 import AddService from "./admin/pages/AddService.jsx";
+import AddCfp from "./admin/pages/AddCfp.jsx";
 
 // import ManageHome from "./admin/pages/ManageHome.jsx";
 // import ManageAbout from "./admin/pages/ManageAbout.jsx";
@@ -34,6 +36,8 @@ import ProtectRole from "./admin/components/ProtectRole.jsx";
 // Errors
 import ErrorPage from "./pages/ErrorPage.jsx";
 import ServiceDetails from "./pages/ServiceDetails.jsx";
+import AddBlog from "./admin/pages/AddBlog.jsx";
+import BlogDetails from "./pages/BlogDetails.jsx";
 
 const router = createBrowserRouter([
   //
@@ -48,6 +52,8 @@ const router = createBrowserRouter([
       { path: "/journal/:slug", element: <JournalDetails /> },
       { path: "/advisory/:slug", element: <AdvisoryDetails /> },
       { path: "/service/:slug", element: <ServiceDetails /> },
+      { path: "/cfp/:slug", element: <CfpDetails /> },
+      { path: "/blog/:slug", element: <BlogDetails /> },
       { path: "about", element: <About /> },
       { path: "contact", element: <Contact /> },
     ],
@@ -79,6 +85,8 @@ const router = createBrowserRouter([
               { path: "journal/add", element: <AddJournal /> },
               { path: "advisory/add", element: <AddAdvisory /> },
               { path: "service/add", element: <AddService /> },
+              { path: "cfp/add", element: <AddCfp /> },
+              { path: "blog/add", element: <AddBlog /> },
               // { path: "home", element: <ManageHome /> },
               // { path: "about", element: <ManageAbout /> },
             ],

@@ -70,4 +70,12 @@ export const getAllServices = () => api.get("/content/all/sevices");
 
 export const getSingleService = (slug) => api.get(`/content/service/${slug}`);
 
+export const getAllCfp = () => api.get("/content/all/cfp");
+
+export const getSingleCfp = (slug) => api.get(`/content/cfp/${slug}`);
+
+export const getAllBlogs = () => api.get("/content/all/blogs");
+
+export const getSingleBlog = (slug) => api.get(`/content/blog/${slug}`);
+
 export default api;
