@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getSingleService } from "../api";
+import { motion } from "framer-motion";
 
 const ServiceDetails = () => {
   const { slug } = useParams();
@@ -24,37 +25,53 @@ const ServiceDetails = () => {
   };
 
   if (loading) return <p className="text-center py-10">Loading service...</p>;
-
   if (!service) return <p className="text-center py-10">Service not found.</p>;
 
   return (
-    <div className="max-w-4xl mx-auto py-10 px-4">
-      {/* Back Link */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="max-w-4xl mx-auto py-12 px-4"
+    >
+      {/* Back link */}
       <Link to="/" className="text-blue-600 hover:underline mb-4 inline-block">
         ← Back to Services
       </Link>
 
-      {/* Service Image */}
-      <img
+      {/* Image */}
+      <motion.img
         src={service.image}
         alt={service.title}
-        className="w-full h-64 object-cover rounded-lg mb-6"
+        className="w-full h-72 object-cover rounded-xl shadow mb-6"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
       />
 
       {/* Title */}
-      <h1 className="text-3xl font-bold mb-4">{service.title}</h1>
+      <motion.h1
+        className="text-4xl font-bold mb-3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
+        {service.title}
+      </motion.h1>
 
       {/* Description */}
-      <p className="text-gray-700 mb-4">{service.description}</p>
+      <motion.p
+        className="text-gray-700 leading-relaxed mb-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
+        {service.description}
+      </motion.p>
 
-      {/* Optional Domain */}
       {service.domain && (
-        <p className="text-gray-500">
+        <p className="text-gray-600">
           <span className="font-semibold">Domain: </span>
           {service.domain}
         </p>
       )}
-    </div>
+    </motion.div>
   );
 };
 
